@@ -21,7 +21,9 @@
         android:theme="@style/Theme.Parish"
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
-
+        <activity
+            android:name=".loginModule.RegistrationActivity"
+            android:exported="false" />
         <activity
             android:name=".loginModule.LoginActivity"
             android:exported="true">
@@ -46,9 +48,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-<!--        <meta-data-->
-<!--            android:name="com.google.android.maps.v2.API_KEY"-->
-<!--            android:value="AIzaSyBbjh-tqqnt6bChHRv8ZI9wY0R9w5Z_MSI" />-->
     </application>
 
 </manifest>
