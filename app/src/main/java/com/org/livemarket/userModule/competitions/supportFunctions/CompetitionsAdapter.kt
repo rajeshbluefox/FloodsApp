@@ -1,11 +1,9 @@
 package com.org.livemarket.userModule.competitions.supportFunctions
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.org.livemarket.databinding.ItemCompetitionBinding
 import com.org.livemarket.userModule.competitions.modalClass.CompetitionData
 
@@ -38,6 +36,7 @@ class CompetitionsAdapter(
 
         val compItem = competitionList[position]
 
+        holder.binding.tvCompetitionName.text = compItem.name
 
         holder.binding.itemCompetition.setOnClickListener {
             onJobClicked.invoke(compItem)

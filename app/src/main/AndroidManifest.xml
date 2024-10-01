@@ -22,16 +22,27 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
-            android:name=".loginModule.RegistrationActivity"
+            android:name=".adminModule.competitions.CompDetailsAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".userModule.UserHomeActivity"
-            android:exported="true">
+            android:name=".adminModule.AdminHomeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".userModule.profileuser.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".userModule.competitions.CompDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".userModule.UserHomeActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".loginModule.LoginActivity"

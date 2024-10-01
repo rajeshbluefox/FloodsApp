@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".adminModule.competitions.CompetitionsAdminFragment">
+
+
+    <LinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/btLive"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingVertical="@dimen/dp_6"
+            android:layout_height="wrap_content"
+            android:text="Live"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/btToDraw"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingVertical="@dimen/dp_6"
+            android:layout_height="wrap_content"
+            android:text="To Draw"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/btDrawn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingVertical="@dimen/dp_6"
+            android:layout_height="wrap_content"
+            android:text="Drawn"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_3"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvComp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/dp_6"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
