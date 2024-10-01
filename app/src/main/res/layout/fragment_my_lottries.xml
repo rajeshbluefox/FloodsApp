@@ -9,14 +9,63 @@
         android:layout_height="match_parent"
         tools:context=".userModule.myLottries.MyLottriesFragment">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="My Lottries"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/btTobeDrawn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/dp_6"
+                android:layout_height="wrap_content"
+                android:text="ToBe Drawn"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/btDrawn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/dp_6"
+                android:layout_height="wrap_content"
+                android:text="Drawn"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/btWon"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/dp_6"
+                android:layout_height="wrap_content"
+                android:text="Won"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_3"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvComp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/dp_6"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

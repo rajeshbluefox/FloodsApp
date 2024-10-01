@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.org.livemarket.R
 import com.org.livemarket.databinding.FragmentCompetitionsBinding
 import com.org.livemarket.databinding.FragmentUserProfileBinding
+import com.org.livemarket.loginModule.supportFunctions.LogoutDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,6 +35,32 @@ class UserProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initViews()
+        onClickListeners()
+    }
+
+    private fun onClickListeners()
+    {
+        binding.btLogout.setOnClickListener {
+            logoutDialog.openLogoutDialog("Are you sure you want to logout?")
+        }
+
+        binding.btChangePassword.setOnClickListener {
+            //goto change password activity
+        }
+    }
+
+    private lateinit var logoutDialog: LogoutDialog
+
+    private fun initViews()
+    {
+        logoutDialog= LogoutDialog(layoutInflater,requireContext(),::onLogoutClicked)
+
+    }
+
+    private fun onLogoutClicked()
+    {
+        //goto login activity
     }
 
 }

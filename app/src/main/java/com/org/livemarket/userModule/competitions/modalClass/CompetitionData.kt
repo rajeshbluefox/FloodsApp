@@ -21,5 +21,7 @@ data class CompetitionData(
     @SerializedName("PricesCount")
     var prizeCount: String = "",
     @SerializedName("DateOfPosting")
-    var dateOfPosting: String = ""
+    var dateOfPosting: String = "",
+    @SerializedName("ticketsPurchased")
+    var ticketsPurchased: Int = 0,
 )
