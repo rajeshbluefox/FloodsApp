@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".userModule.mywallet.WalletFragment">
@@ -12,16 +13,16 @@
             android:id="@+id/myWalletBalanceLt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#0f1447"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/ivWallet"
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="@dimen/dp_100"
-                android:background="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_42"
+                android:src="@drawable/wallet_icon"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,28 +30,73 @@
                 android:id="@+id/tvMyWallet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
                 android:text="My Wallet"
-                android:layout_marginStart="@dimen/dp_12"
-                app:layout_constraintTop_toTopOf="@id/ivWallet"
-                app:layout_constraintStart_toEndOf="@id/ivWallet"/>
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/ivWallet"
+                app:layout_constraintStart_toEndOf="@id/ivWallet"
+                app:layout_constraintTop_toTopOf="@+id/ivWallet" />
 
             <TextView
                 android:id="@+id/tvWalletBalance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="₹ 2500.00"
-                android:layout_marginStart="@dimen/dp_12"
-                app:layout_constraintTop_toBottomOf="@id/tvMyWallet"
-                app:layout_constraintStart_toEndOf="@id/ivWallet" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tvMyWallet"
+                app:layout_constraintStart_toStartOf="@+id/ivWallet"
+                app:layout_constraintTop_toBottomOf="@id/ivWallet" />
 
-            <TextView
-                android:id="@+id/btAddMoney"
+<!--            <TextView-->
+<!--                android:id="@+id/btAddMoney"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Add Money"-->
+<!--                android:textColor="@color/white"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvAddOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Money"
+                android:layout_marginHorizontal="6dp"
+                android:layout_marginTop="14dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="@dimen/dp_6"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/lyAddOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fed73a"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:paddingVertical="@dimen/dp_6"
+                    app:layout_constraintStart_toEndOf="@+id/main">
+
+
+                    <TextView
+                        android:id="@+id/btAddMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Money"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -100,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:text="Add Deposit"
                 android:paddingVertical="@dimen/dp_6"
-                android:background="@color/blue"
+                android:background="@color/button_color"
                 android:textColor="@color/white"
                 android:textAlignment="center"
                 android:layout_marginHorizontal="@dimen/dp_16"

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/itemWithdraw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -32,101 +32,409 @@
             android:id="@+id/adminLt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/primary_card_color"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
-                android:id="@+id/atvUserName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="UserName"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                    android:id="@+id/tvDate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_6"
+                    android:text="Date :"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/valueDate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="02-12-24"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDate1"
+                    app:layout_constraintStart_toEndOf="@+id/tvDate1"
+                    app:layout_constraintTop_toTopOf="@+id/tvDate1" />
+
+                <TextView
+                    android:id="@+id/tvStatus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="Status :"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toStartOf="@+id/valueStatus1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/valueStatus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_6"
+                    android:layout_marginEnd="3dp"
+                    android:text="Pending"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvStatus1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvStatus1" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_marginTop="6dp"
+                    android:background="#9E9999"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDate1" />
+
+                <TextView
+                    android:id="@+id/textUserNme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="User Name :"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintStart_toStartOf="@+id/tvDate1"
+                    app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                <TextView
+                    android:id="@+id/atvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="Rajesh"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textUserNme"
+                    app:layout_constraintStart_toEndOf="@+id/textUserNme"
+                    app:layout_constraintTop_toTopOf="@+id/textUserNme" />
+
+                <TextView
+                    android:id="@+id/textPhnNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="PhoneNumber :"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintStart_toStartOf="@+id/textUserNme"
+                    app:layout_constraintTop_toBottomOf="@+id/textUserNme" />
+
+                <TextView
+                    android:id="@+id/atvPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="7655978767"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textPhnNum"
+                    app:layout_constraintStart_toEndOf="@+id/textPhnNum"
+                    app:layout_constraintTop_toTopOf="@+id/textPhnNum" />
+
+                <TextView
+                    android:id="@+id/textAmount1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Amount :"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintStart_toStartOf="@+id/textUserNme"
+                    app:layout_constraintTop_toBottomOf="@+id/textPhnNum" />
+
+                <TextView
+                    android:id="@+id/atvAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="Rs.1000"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textAmount1"
+                    app:layout_constraintStart_toEndOf="@+id/textAmount1"
+                    app:layout_constraintTop_toTopOf="@+id/textAmount1" />
+
+                <TextView
+                    android:id="@+id/textReferenceId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="ReferenceId :"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintStart_toStartOf="@+id/textAmount1"
+                    app:layout_constraintTop_toBottomOf="@+id/textAmount1" />
+
+                <TextView
+                    android:id="@+id/atvReferenceId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="12345"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textReferenceId"
+                    app:layout_constraintStart_toEndOf="@+id/textReferenceId"
+                    app:layout_constraintTop_toTopOf="@+id/textReferenceId" />
 
             <TextView
-                android:id="@+id/atvPhoneNumber"
+                android:id="@+id/textUPIID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PhoneNumber"
-                app:layout_constraintTop_toBottomOf="@id/atvUserName"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <TextView
-                android:id="@+id/atvAmount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Amount"
-                app:layout_constraintTop_toBottomOf="@id/atvPhoneNumber"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:layout_marginTop="6dp"
+                android:text="UPIId :"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintStart_toStartOf="@+id/textReferenceId"
+                app:layout_constraintTop_toBottomOf="@+id/textReferenceId" />
 
             <TextView
                 android:id="@+id/atvUPIID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="UPIId"
-                app:layout_constraintTop_toBottomOf="@id/atvAmount"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:layout_marginStart="3dp"
+                android:text="ybl@1223545561"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textUPIID"
+                app:layout_constraintStart_toEndOf="@+id/textUPIID" />
+
+            <TextView
+                android:id="@+id/textBankName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Bank Name :"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintStart_toStartOf="@+id/textUPIID"
+                app:layout_constraintTop_toBottomOf="@+id/textUPIID" />
 
             <TextView
                 android:id="@+id/atvBankName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bank Name"
-                app:layout_constraintTop_toBottomOf="@id/atvUPIID"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:layout_marginStart="3dp"
+                android:text="State Bank of India"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textBankName"
+                app:layout_constraintStart_toEndOf="@+id/textBankName" />
+
+
+            <TextView
+                android:id="@+id/textAccHolderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Account Holder Name :"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintStart_toStartOf="@+id/textBankName"
+                app:layout_constraintTop_toBottomOf="@+id/textBankName" />
 
             <TextView
                 android:id="@+id/atvAccHolderName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Account Holder Name"
-                app:layout_constraintTop_toBottomOf="@id/atvBankName"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:layout_marginStart="3dp"
+                android:text="Rajesh Bairu"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textAccHolderName"
+                app:layout_constraintStart_toEndOf="@+id/textAccHolderName" />
+
+            <TextView
+                android:id="@+id/textAccNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Account Number :"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintStart_toStartOf="@+id/textAccHolderName"
+                app:layout_constraintTop_toBottomOf="@+id/textAccHolderName" />
 
             <TextView
                 android:id="@+id/atvAccNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Account Number"
-                app:layout_constraintTop_toBottomOf="@id/atvAccHolderName"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:layout_marginStart="3dp"
+                android:text="12345678912"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textAccNumber"
+                app:layout_constraintStart_toEndOf="@+id/textAccNumber" />
+
+            <TextView
+                android:id="@+id/textIFSCCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Account Number :"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintStart_toStartOf="@+id/textAccNumber"
+                app:layout_constraintTop_toBottomOf="@+id/textAccNumber" />
 
             <TextView
                 android:id="@+id/atvIFSCCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="IFSC Code"
-                app:layout_constraintTop_toBottomOf="@id/atvAccNumber"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:layout_marginStart="3dp"
+                android:text="SBIN00000"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textIFSCCode"
+                app:layout_constraintStart_toEndOf="@+id/textIFSCCode" />
+
+
 
             <TextView
-                android:id="@+id/btApprove"
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="wrap_content"
-                android:text="Approve"
-                android:textColor="@color/white"
-                android:textAlignment="center"
-                android:background="@color/blue"
-                app:layout_constraintTop_toBottomOf="@id/atvIFSCCode"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btDeny"/>
+                    android:id="@+id/btApprove"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/button_two"
+                    android:text="Approve"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btDeny"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textIFSCCode" />
 
-            <TextView
-                android:id="@+id/btDeny"
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="wrap_content"
-                android:text="Deny"
-                android:textColor="@color/white"
-                android:textAlignment="center"
-                android:background="@color/blue"
-                app:layout_constraintTop_toBottomOf="@id/atvIFSCCode"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/btApprove"/>
+                <TextView
+                    android:id="@+id/btDeny"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/button_two"
+                    android:text="Deny"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btApprove"
+                    app:layout_constraintTop_toBottomOf="@id/textIFSCCode"
+                     />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--            <TextView-->
+<!--                android:id="@+id/atvUserName"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="UserName"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/atvPhoneNumber"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="PhoneNumber"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/atvUserName"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/atvAmount"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Amount"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/atvPhoneNumber"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/atvUPIID"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="UPIId"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/atvAmount"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/atvBankName"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Bank Name"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/atvUPIID"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/atvAccHolderName"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Account Holder Name"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/atvBankName"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/atvAccNumber"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Account Number"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/atvAccHolderName"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/atvIFSCCode"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="IFSC Code"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/atvAccNumber"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/btApprove"-->
+<!--                android:layout_width="@dimen/dp_100"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Approve"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textAlignment="center"-->
+<!--                android:background="@color/blue"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/atvIFSCCode"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/btDeny"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/btDeny"-->
+<!--                android:layout_width="@dimen/dp_100"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Deny"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textAlignment="center"-->
+<!--                android:background="@color/blue"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/atvIFSCCode"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/btApprove"/>-->
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
