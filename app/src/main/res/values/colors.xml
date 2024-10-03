@@ -36,5 +36,17 @@
     <color name="navi_bar_text">#1B66A3</color>
 
 
+    /////////////////////////////////////////////
+
+    <color name="app_background_color">#ecdcc2</color>
+    <color name="main_color">#016f48</color>
+
+    <color name="button_color">#f7793c</color>
+
+
+
+
+
+
 
 </resources>
